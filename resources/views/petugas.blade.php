@@ -6,7 +6,7 @@
     <title>Petugas</title>
 </head>
 <body>
-<form action="">
+<form action="{{ route('get_buku') }}">
     <h1>data petugas</h1>
         <label for="id_petugas">ID Petugas</label>
         <br>
