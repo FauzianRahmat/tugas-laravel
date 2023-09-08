@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\perpustakaan;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,10 +13,13 @@ use App\Http\Controllers\perpustakaan;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-Route::get('/', [perpustakaan::class, 'Welcome'])->name('get_welcome');
 
-Route::get('/anggota', [perpustakaan::class, 'anggota'])->name('get_anggota');
+Route::get('/', function () {
+    return view('welcome');
+})->name('dashboard');
 
-Route::get('/buku', [perpustakaan::class, 'buku'])->name('get_buku');
+Route::get('/perpustakaan/anggota', [Perpustakaan::class, 'anggota'])->name('get_anggota');
 
-Route::get('/petugas', [perpustakaan::class, 'petugas'])->name('get_petugas');
+Route::get('/perpustakaan/buku', [Perpustakaan::class, 'buku'])->name('get_buku');
+
+Route::get('/perpustakaan/petugas', [Perpustakaan::class, 'petugas'])->name('get_petugas');
