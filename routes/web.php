@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\perpustakaan;
-
+use App\Http\Controllers\cast;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,9 +17,14 @@ use App\Http\Controllers\perpustakaan;
 Route::get('/', function () {
     return view('welcome');
 })->name('dashboard');
+Route::get('/create', function () {
+    return view('cast.create');
+});
 
-Route::get('/perpustakaan/anggota', [Perpustakaan::class, 'anggota'])->name('get_anggota');
+// Route::get('/perpustakaan/anggota', [Perpustakaan::class, 'anggota'])->name('get_anggota');
 
-Route::get('/perpustakaan/buku', [Perpustakaan::class, 'buku'])->name('get_buku');
+// Route::get('/perpustakaan/buku', [Perpustakaan::class, 'buku'])->name('get_buku');
 
-Route::get('/perpustakaan/petugas', [Perpustakaan::class, 'petugas'])->name('get_petugas');
+// Route::get('/perpustakaan/pe', [Perpustakaan::class, 'petugas'])->name('get_petugas');
+
+route::resource('/cast',castcontroller::class);
